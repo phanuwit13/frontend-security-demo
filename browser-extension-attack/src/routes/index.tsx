@@ -12,24 +12,24 @@ export default function App() {
   useEffect(() => {
     if (!accountRef.current) return
 
-    /**
-     * 🛡️ SECTION: PROTECTION SYSTEM (MutationObserver)
-     * วิธีทดสอบ:
-     * 1. ลอง Comment ส่วนนี้ออก -> แล้วรันสคริปต์แก้ DOM -> เลขจะเปลี่ยนแต่ไม่มี Alert
-     * 2. เปิด Comment ส่วนนี้ -> แล้วรันสคริปต์แก้ DOM -> ระบบจะตรวจจับและบล็อกทันที
-     */
-    const observer = new MutationObserver(() => {
-      setHacked(true) // เปลี่ยน State ทันทีที่พบการแก้ไข DOM
-    })
+    // /**
+    //  * 🛡️ SECTION: PROTECTION SYSTEM (MutationObserver)
+    //  * วิธีทดสอบ:
+    //  * 1. ลอง Comment ส่วนนี้ออก -> แล้วรันสคริปต์แก้ DOM -> เลขจะเปลี่ยนแต่ไม่มี Alert
+    //  * 2. เปิด Comment ส่วนนี้ -> แล้วรันสคริปต์แก้ DOM -> ระบบจะตรวจจับและบล็อกทันที
+    //  */
+    // const observer = new MutationObserver(() => {
+    //   setHacked(true) // เปลี่ยน State ทันทีที่พบการแก้ไข DOM
+    // })
 
-    observer.observe(accountRef.current, {
-      childList: true,
-      characterData: true,
-      subtree: true,
-    })
+    // observer.observe(accountRef.current, {
+    //   childList: true,
+    //   characterData: true,
+    //   subtree: true,
+    // })
 
-    return () => observer.disconnect()
-    // --------------------------------------------------------
+    // return () => observer.disconnect()
+    // // --------------------------------------------------------
   }, [])
 
   const currentDate = new Date().toLocaleDateString('th-TH', {
@@ -43,7 +43,7 @@ export default function App() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6">
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="bg-white rounded-t-2xl px-8 py-6 border-b border-slate-200">
@@ -85,7 +85,7 @@ export default function App() {
             <div className="bg-red-50 border-l-4 border-red-600 px-8 py-4">
               <div className="flex items-start">
                 <svg
-                  className="w-6 h-6 text-red-600 mr-3 flex-shrink-0"
+                  className="w-6 h-6 text-red-600 mr-3 shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
