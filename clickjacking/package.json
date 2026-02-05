@@ -1,0 +1,19 @@
+{
+  "name": "clickjacking-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clickjacking demonstration with bank-target and hacker-web",
+  "scripts": {
+    "install:all": "pnpm install",
+    "dev": "pnpm --parallel --filter \"./bank-target\" --filter \"./hacker-web\" dev",
+    "dev:bank": "pnpm --filter bank-target dev",
+    "dev:hacker": "pnpm --filter hacker-web dev",
+    "build": "pnpm --parallel --filter \"./bank-target\" --filter \"./hacker-web\" build",
+    "build:bank": "pnpm --filter bank-target build",
+    "build:hacker": "pnpm --filter hacker-web build",
+    "clean": "rm -rf bank-target/node_modules bank-target/dist hacker-web/node_modules hacker-web/dist node_modules pnpm-lock.yaml"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
